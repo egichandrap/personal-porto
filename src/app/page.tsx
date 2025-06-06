@@ -112,6 +112,7 @@ export default function Home() {
 
           {/* Links */}
           <div className="mt-8 space-y-4 text-left">
+            <h1> links </h1>
             {[
               {
                 href: "#",
@@ -157,38 +158,38 @@ export default function Home() {
                 text: "Resume & Curriculum Vitae",
                 borderColor: "border-blue-600",
               },
-              {
-                href: "#",
-                icon: (
-                  <svg
-                    className="w-5 h-5 mr-3 text-pink-600"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8 7v6a4 4 0 008 0V7"
-                    ></path>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 3v4"
-                    ></path>
-                  </svg>
-                ),
-                text: "1 on 1 Session",
-                borderColor: "border-pink-600",
-              },
+              // {
+              //   href: "#",
+              //   icon: (
+              //     <svg
+              //       className="w-5 h-5 mr-3 text-pink-600"
+              //       fill="none"
+              //       stroke="currentColor"
+              //       strokeWidth="2"
+              //       viewBox="0 0 24 24"
+              //       xmlns="http://www.w3.org/2000/svg"
+              //       aria-hidden="true"
+              //     >
+              //       <path
+              //         strokeLinecap="round"
+              //         strokeLinejoin="round"
+              //         d="M8 7v6a4 4 0 008 0V7"
+              //       ></path>
+              //       <path
+              //         strokeLinecap="round"
+              //         strokeLinejoin="round"
+              //         d="M12 3v4"
+              //       ></path>
+              //     </svg>
+              //   ),
+              //   text: "1 on 1 Session",
+              //   borderColor: "border-pink-600",
+              // },
               {
                 href: "/buy-coffee",
                 icon: (
                   <svg
-                    className="w-5 h-5 mr-3 text-gray-400"
+                    className="w-5 h-5 mr-3 text-pink-600"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -204,7 +205,7 @@ export default function Home() {
                   </svg>
                 ),
                 text: "Buy me a Cup of Coffee",
-                borderColor: "border-gray-400",
+                borderColor: "border-pink-600",
               },
               ].map(({ href, icon, text, borderColor }) => {
                 const hoverBgClass = {

@@ -26,7 +26,7 @@ export default function BuyCoffee() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent sm:bg-gray-50 dark:sm:bg-gray-50 dark:bg-transparent flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gray-800 sm:bg-gray-50 dark:sm:bg-gray-50 dark:bg-gray-800 flex justify-center p-6">
       <div className="space-y-8 max-w-4xl w-full">
         {/* Back button and title */}
         <div className="flex items-center mb-6">
