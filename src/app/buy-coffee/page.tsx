@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function BuyCoffee() {
   const [copySuccess, setCopySuccess] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     document.body.classList.add("buy-coffee-page");
@@ -17,7 +19,7 @@ export default function BuyCoffee() {
       await navigator.clipboard.writeText(text);
       setCopySuccess("Copied!");
       setTimeout(() => setCopySuccess(""), 2000);
-    } catch (err) {
+    } catch {
       setCopySuccess("Failed to copy!");
       setTimeout(() => setCopySuccess(""), 2000);
     }
@@ -26,9 +28,29 @@ export default function BuyCoffee() {
   return (
     <div className="min-h-screen bg-transparent sm:bg-gray-50 dark:sm:bg-gray-50 dark:bg-transparent flex items-center justify-center p-6">
       <div className="space-y-8 max-w-4xl w-full">
-        <h1 className="text-2xl font-bold mb-6 text-center text-white-900 dark:text-white-100">
-          Bank Transfer
-        </h1>
+        {/* Back button and title */}
+        <div className="flex items-center mb-6">
+          <button
+            onClick={() => router.push("/")}
+            aria-label="Back to main page"
+            className="p-2 rounded-full border border-gray-400 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-700 dark:text-gray-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <h1 className="text-2xl font-bold ml-4 text-center text-white-900 dark:text-white-100">
+            Bank Transfer
+          </h1>
+        </div>
+
         <div className="flex flex-col sm:flex-row justify-center gap-8">
           {/* Card 1 */}
           <div
