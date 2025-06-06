@@ -112,7 +112,6 @@ export default function Home() {
 
           {/* Links */}
           <div className="mt-8 space-y-4 text-left">
-            <h1> links </h1>
             {[
               {
                 href: "#",
@@ -200,8 +199,13 @@ export default function Home() {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M3 10h18M3 14h18M3 18h18"
-                    ></path>
+                      d="M8 17h8a4 4 0 004-4V9H4v4a4 4 0 004 4zm0 0v1a3 3 0 006 0v-1"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8 3v1m4-1v1m4-1v1"
+                    />
                   </svg>
                 ),
                 text: "Buy me a Cup of Coffee",
@@ -294,7 +298,7 @@ export default function Home() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-green-600 opacity-20 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
             <div className="flex items-center gap-4 mb-3">
               <svg
-                className="w-6 h-6 text-green-600"
+                className="w-6 h-6 text-white-600"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
