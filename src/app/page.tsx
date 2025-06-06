@@ -5,6 +5,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { FaCoffee, FaFileAlt, FaFolderOpen } from "react-icons/fa";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
@@ -115,45 +116,47 @@ export default function Home() {
             {[
               {
                 href: "#",
-                icon: (
-                  <svg
-                    className="w-5 h-5 mr-3 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    ></path>
-                  </svg>
-                ),
+                icon: <FaFolderOpen className="w-5 h-5 mr-3 text-brown-600" />,
+                // icon: (
+                //   <svg
+                //     className="w-5 h-5 mr-3 text-green-600"
+                //     fill="none"
+                //     stroke="currentColor"
+                //     strokeWidth="2"
+                //     viewBox="0 0 24 24"
+                //     xmlns="http://www.w3.org/2000/svg"
+                //     aria-hidden="true"
+                //   >
+                //     <path
+                //       strokeLinecap="round"
+                //       strokeLinejoin="round"
+                //       d="M5 13l4 4L19 7"
+                //     ></path>
+                //   </svg>
+                // ),
                 text: "Personal Website & Portfolio",
                 borderColor: "border-green-600",
               },
               {
                 href: "/pdf/CV.Egi-Chandra-Pratama.pdf",
-                icon: (
-                  <svg
-                    className="w-5 h-5 mr-3 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12h6m-3-3v6m-6 3h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"
-                    ></path>
-                  </svg>
-                ),
+                icon: <FaFileAlt className="w-5 h-5 mr-3 text-brown-600" />,
+                // icon: (
+                //   <svg
+                //     className="w-5 h-5 mr-3 text-blue-600"
+                //     fill="none"
+                //     stroke="currentColor"
+                //     strokeWidth="2"
+                //     viewBox="0 0 24 24"
+                //     xmlns="http://www.w3.org/2000/svg"
+                //     aria-hidden="true"
+                //   >
+                //     <path
+                //       strokeLinecap="round"
+                //       strokeLinejoin="round"
+                //       d="M9 12h6m-3-3v6m-6 3h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"
+                //     ></path>
+                //   </svg>
+                // ),
                 text: "Resume & Curriculum Vitae",
                 borderColor: "border-blue-600",
               },
@@ -186,28 +189,30 @@ export default function Home() {
               // },
               {
                 href: "/buy-coffee",
-                icon: (
-                  <svg
-                    className="w-5 h-5 mr-3 text-pink-600"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8 17h8a4 4 0 004-4V9H4v4a4 4 0 004 4zm0 0v1a3 3 0 006 0v-1"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8 3v1m4-1v1m4-1v1"
-                    />
-                  </svg>
-                ),
+                // icon: (
+                //   <svg
+                //     className="w-5 h-5 mr-3 text-pink-600"
+                //     fill="none"
+                //     stroke="currentColor"
+                //     strokeWidth="2"
+                //     viewBox="0 0 24 24"
+                //     xmlns="http://www.w3.org/2000/svg"
+                //     aria-hidden="true"
+                //   >
+                //     <path
+                //       strokeLinecap="round"
+                //       strokeLinejoin="round"
+                //       d="M8 17h8a4 4 0 004-4V9H4v4a4 4 0 004 4zm0 0v1a3 3 0 006 0v-1"
+                //     />
+                //     <path
+                //       strokeLinecap="round"
+                //       strokeLinejoin="round"
+                //       d="M8 3v1m4-1v1m4-1v1"
+                //     />
+                //   </svg>
+                // ),
+
+                icon: <FaCoffee className="w-5 h-5 mr-3 text-brown-600" />,
                 text: "Buy me a Cup of Coffee",
                 borderColor: "border-pink-600",
               },
@@ -216,14 +221,14 @@ export default function Home() {
                   "border-green-600": "hover:bg-green-100 dark:hover:bg-green-700",
                   "border-blue-600": "hover:bg-blue-100 dark:hover:bg-blue-700",
                   "border-pink-600": "hover:bg-pink-100 dark:hover:bg-pink-700",
-                  "border-gray-400": "hover:bg-gray-200 dark:hover:bg-gray-700",
+                  // "border-gray-400": "hover:bg-gray-200 dark:hover:bg-gray-700",
                 }[borderColor] || "hover:bg-gray-200 dark:hover:bg-gray-700";
 
                 const arrowColorClass = {
                   "border-green-600": "text-green-400",
                   "border-blue-600": "text-blue-400",
                   "border-pink-600": "text-pink-400",
-                  "border-gray-400": "text-gray-400",
+                  // "border-gray-400": "text-gray-400",
                 }[borderColor] || "text-gray-400";
 
                 return text === "Buy me a Cup of Coffee" ? (
