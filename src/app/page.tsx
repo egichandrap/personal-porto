@@ -5,7 +5,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { FaCoffee, FaFileAlt, FaFolderOpen } from "react-icons/fa";
+import { FaCoffee, FaFileAlt, FaFolderOpen, FaEnvelope, FaChevronRight } from "react-icons/fa";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
@@ -117,46 +117,12 @@ export default function Home() {
               {
                 href: "#",
                 icon: <FaFolderOpen className="w-5 h-5 mr-3 text-brown-600" />,
-                // icon: (
-                //   <svg
-                //     className="w-5 h-5 mr-3 text-green-600"
-                //     fill="none"
-                //     stroke="currentColor"
-                //     strokeWidth="2"
-                //     viewBox="0 0 24 24"
-                //     xmlns="http://www.w3.org/2000/svg"
-                //     aria-hidden="true"
-                //   >
-                //     <path
-                //       strokeLinecap="round"
-                //       strokeLinejoin="round"
-                //       d="M5 13l4 4L19 7"
-                //     ></path>
-                //   </svg>
-                // ),
                 text: "Personal Website & Portfolio",
                 borderColor: "border-green-600",
               },
               {
                 href: "/pdf/CV.Egi-Chandra-Pratama.pdf",
                 icon: <FaFileAlt className="w-5 h-5 mr-3 text-brown-600" />,
-                // icon: (
-                //   <svg
-                //     className="w-5 h-5 mr-3 text-blue-600"
-                //     fill="none"
-                //     stroke="currentColor"
-                //     strokeWidth="2"
-                //     viewBox="0 0 24 24"
-                //     xmlns="http://www.w3.org/2000/svg"
-                //     aria-hidden="true"
-                //   >
-                //     <path
-                //       strokeLinecap="round"
-                //       strokeLinejoin="round"
-                //       d="M9 12h6m-3-3v6m-6 3h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"
-                //     ></path>
-                //   </svg>
-                // ),
                 text: "Resume & Curriculum Vitae",
                 borderColor: "border-blue-600",
               },
@@ -189,29 +155,6 @@ export default function Home() {
               // },
               {
                 href: "/buy-coffee",
-                // icon: (
-                //   <svg
-                //     className="w-5 h-5 mr-3 text-pink-600"
-                //     fill="none"
-                //     stroke="currentColor"
-                //     strokeWidth="2"
-                //     viewBox="0 0 24 24"
-                //     xmlns="http://www.w3.org/2000/svg"
-                //     aria-hidden="true"
-                //   >
-                //     <path
-                //       strokeLinecap="round"
-                //       strokeLinejoin="round"
-                //       d="M8 17h8a4 4 0 004-4V9H4v4a4 4 0 004 4zm0 0v1a3 3 0 006 0v-1"
-                //     />
-                //     <path
-                //       strokeLinecap="round"
-                //       strokeLinejoin="round"
-                //       d="M8 3v1m4-1v1m4-1v1"
-                //     />
-                //   </svg>
-                // ),
-
                 icon: <FaCoffee className="w-5 h-5 mr-3 text-brown-600" />,
                 text: "Buy me a Cup of Coffee",
                 borderColor: "border-pink-600",
@@ -239,21 +182,7 @@ export default function Home() {
                   >
                     {icon}
                     <span className="font-semibold">{text}</span>
-                    <svg
-                      className={`ml-auto w-5 h-5 ${arrowColorClass}`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
+                    <FaChevronRight className={`ml-auto w-5 h-5 ${arrowColorClass}`} />
                   </button>
                 ) : (
                   <a
@@ -265,21 +194,7 @@ export default function Home() {
                   >
                     {icon}
                     <span className="font-semibold">{text}</span>
-                    <svg
-                      className={`ml-auto w-5 h-5 ${arrowColorClass}`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
+                    <FaChevronRight className={`ml-auto w-5 h-5 ${arrowColorClass}`} />
                   </a>
                 );
               })}
@@ -302,21 +217,7 @@ export default function Home() {
           <div className="mt-8 p-6 rounded-lg bg-green-200 bg-opacity-50 dark:bg-green-700 dark:bg-opacity-30 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-green-600 opacity-20 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
             <div className="flex items-center gap-4 mb-3">
-              <svg
-                className="w-6 h-6 text-white-600"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                ></path>
-              </svg>
+              <FaEnvelope className="w-6 h-6 text-white-600" />
               <h2 className="font-bold text-lg">Drop me an Email</h2>
             </div>
             <p className="font-semibold">egichandrapratama@gmail.com</p>
