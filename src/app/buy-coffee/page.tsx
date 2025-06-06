@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function BuyCoffee() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-50 flex items-center justify-center p-6">
