@@ -1,10 +1,15 @@
 "use client";
 
+"use client";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
+  const [showPopup, setShowPopup] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     // On mount, check localStorage for theme preference
@@ -27,8 +32,17 @@ export default function Home() {
     localStorage.setItem("theme", newTheme);
   };
 
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
+  const handleBankTransferClick = () => {
+    setShowPopup(false);
+    router.push("/buy-coffee");
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-50 text-gray-900 dark:text-gray-200 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-transparent sm:bg-gray-50 dark:bg-transparent dark:sm:bg-gray-50 text-gray-900 dark:text-gray-200 flex items-center justify-center p-6">
       <div className="relative max-w-md w-full bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
         {/* Theme toggle switch */}
         <button
@@ -207,7 +221,31 @@ export default function Home() {
                   "border-gray-400": "text-gray-400",
                 }[borderColor] || "text-gray-400";
 
-                return (
+                return text === "Buy me a Cup of Coffee" ? (
+                  <button
+                    key={text}
+                    onClick={togglePopup}
+                    className={`flex items-center border ${borderColor} rounded-lg px-4 py-3 ${hoverBgClass} transition-colors shadow-md w-full text-left`}
+                  >
+                    {icon}
+                    <span className="font-semibold">{text}</span>
+                    <svg
+                      className={`ml-auto w-5 h-5 ${arrowColorClass}`}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      ></path>
+                    </svg>
+                  </button>
+                ) : (
                   <a
                     key={text}
                     href={href}
@@ -236,6 +274,19 @@ export default function Home() {
                 );
               })}
           </div>
+
+          {/* Popup */}
+          {showPopup && (
+            <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 p-4 shadow-lg rounded-t-lg z-50">
+              <h2 className="text-center text-lg font-semibold mb-4">Buy me a Cup of Coffee</h2>
+              <button
+                onClick={handleBankTransferClick}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                BankTransfer
+              </button>
+            </div>
+          )}
 
           {/* Get in touch */}
           <div className="mt-8 p-6 rounded-lg bg-green-200 bg-opacity-50 dark:bg-green-700 dark:bg-opacity-30 relative overflow-hidden">

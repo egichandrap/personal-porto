@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Override background on mobile for buy-coffee page */
+@media (max-width: 640px) {
+  body.buy-coffee-page {
+    background: transparent !important;
+  }
+}

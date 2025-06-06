@@ -1,6 +1,17 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function BuyCoffee() {
+  useEffect(() => {
+    document.body.classList.add("buy-coffee-page");
+    return () => {
+      document.body.classList.remove("buy-coffee-page");
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-50 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-transparent sm:bg-gray-50 dark:sm:bg-gray-50 dark:bg-transparent flex items-center justify-center p-6">
       <div className="space-y-8 max-w-4xl w-full">
         <h1 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-gray-100">
           Buy me a Cup of Coffee
