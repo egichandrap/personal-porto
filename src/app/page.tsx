@@ -121,7 +121,7 @@ export default function Home() {
                 borderColor: "border-green-600",
               },
               {
-                href: "/pdf/[LATEST][CV]-Egi-Chandra-Pratama.pdf",
+                href: "/pdf/CV.Egi-Chandra-Pratama-[Latest].pdf",
                 icon: <FaFileAlt className="w-5 h-5 mr-3 text-brown-600" />,
                 text: "Resume & Curriculum Vitae",
                 borderColor: "border-blue-600",
